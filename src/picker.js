@@ -7,7 +7,7 @@ const categoryNames = {
   writing: 'Writing', browser: 'Browser & testing', documentation: 'Documentation',
   debugging: 'Debugging', cloud: 'Cloud & deployment', database: 'Databases', 'source-control': 'Git & hosting',
 };
-const languageNames = { python: 'Python', rust: 'Rust', swift: 'Swift', javascript: 'JavaScript', typescript: 'TypeScript', go: 'Go', sql: 'SQL', cpp: 'C++', csharp: 'C#' };
+const languageNames = { python: 'Python', rust: 'Rust', swift: 'Swift', javascript: 'JavaScript', typescript: 'TypeScript', go: 'Go', sql: 'SQL', cpp: 'C++', csharp: 'C#', luau: 'Luau' };
 const firstFolders = ['UI', 'Token saving', 'Reverse engineering', 'Language specific'];
 const title = value => value.replace(/-/g, ' ').replace(/^./, letter => letter.toUpperCase());
 const startsWithPath = (full, prefix) => prefix.every((part, index) => full[index] === part);

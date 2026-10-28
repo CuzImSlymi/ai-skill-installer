@@ -1,0 +1,36 @@
+[
+  {
+    "id": "roblox-studio",
+    "name": "Roblox Studio MCP",
+    "kind": "mcp",
+    "category": "game-development",
+    "languages": ["luau"],
+    "description": "Read and edit scripts, inspect your place, and run playtests in Roblox Studio.",
+    "why": "Roblox's built-in server connects your coding harness directly to an open Studio session.",
+    "source": "https://create.roblox.com/docs/studio/mcp",
+    "license": "Roblox Studio terms",
+    "reviewedAt": "2026-10-28",
+    "tags": ["roblox", "studio", "luau", "games", "playtesting", "official"],
+    "setup": [
+      {
+        "label": "Enable in Studio",
+        "detail": "Update Roblox Studio. Open Assistant > ... > Manage MCP Servers and turn on Enable Studio as MCP server."
+      },
+      {
+        "label": "Quick Connect",
+        "detail": "In Studio's MCP settings, enable your harness under Quick connect. Roblox lists Codex CLI, Claude Code, and Antigravity. Restart Studio if your installed harness is missing."
+      },
+      {
+        "label": "OpenCode or manual connection",
+        "detail": "Use Studio's stdio setup instructions at https://create.roblox.com/docs/studio/mcp. Windows launches cmd.exe with arguments /c and %LOCALAPPDATA%\\Roblox\\mcp.bat. macOS launches /Applications/RobloxStudio.app/Contents/MacOS/StudioMCP. Use your harness's MCP configuration format."
+      },
+      {
+        "label": "Verify",
+        "detail": "Keep Studio open, restart your harness, and check for the green connected-client indicator in Studio's MCP settings."
+      }
+    ],
+    "install": null,
+    "cautions": ["Connected clients can modify your open places and execute Luau code. Save your work before running edits or playtests."],
+    "clients": ["codex", "claude-code", "antigravity", "opencode"]
+  }
+]

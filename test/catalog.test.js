@@ -18,7 +18,7 @@ test('catalog is validated and dependencies expand once in dependency order', as
 });
 
 test('invalid and circular dependencies are rejected', async () => {
-  const original = (await loadCatalog())[0];
+  const original = (await loadCatalog()).find(entry => entry.kind === 'skill');
   const a = { ...original, id: 'a', requires: ['missing'] };
   assert.throws(() => validateCatalog([a]), /Unknown catalog ID/);
   const b = { ...original, id: 'b', requires: ['a'] };
