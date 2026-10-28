@@ -1,0 +1,777 @@
+[
+  {
+    "id": "context7",
+    "name": "Context7 MCP",
+    "kind": "mcp",
+    "category": "documentation",
+    "description": "Search library documentation.",
+    "why": "Version-specific library references when an agent lacks a docs connector.",
+    "source": "https://github.com/upstash/context7",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "docs",
+      "node"
+    ],
+    "setup": [
+      {
+        "label": "Runtime",
+        "detail": "Node 20.18.1+ and npx. Optional CONTEXT7_API_KEY for higher rate limits."
+      },
+      {
+        "label": "Transport",
+        "detail": "Runs locally and sends documentation queries to Context7."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@upstash/context7-mcp@4.4.4"
+        ],
+        "env": []
+      }
+    },
+    "cautions": [
+      "Queries leave the machine. Rate limits and service plans apply."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "playwright",
+    "name": "Playwright MCP",
+    "kind": "mcp",
+    "category": "browser",
+    "description": "Automate browser interaction using Playwright.",
+    "why": "Useful for interactive UI checks and inspecting application behavior.",
+    "source": "https://github.com/microsoft/playwright-mcp",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "browser",
+      "testing"
+    ],
+    "setup": [
+      {
+        "label": "Runtime",
+        "detail": "Node 20+; browser binaries may need downloading."
+      },
+      {
+        "label": "Profile",
+        "detail": "Default persistent profile retains logins; --isolated uses a fresh session."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@playwright/mcp@0.0.83"
+        ],
+        "env": []
+      }
+    },
+    "cautions": [
+      "Browser actions can change live data; duplicate existing browser tools only when needed."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "chrome-devtools",
+    "name": "Chrome DevTools MCP",
+    "kind": "mcp",
+    "category": "browser",
+    "description": "Inspect and debug Chrome using DevTools.",
+    "why": "Use performance traces, network inspection and browser debugging when needed.",
+    "source": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "browser",
+      "debugging"
+    ],
+    "setup": [
+      {
+        "label": "Runtime",
+        "detail": "Node LTS, npm, current stable Chrome."
+      },
+      {
+        "label": "Transport",
+        "detail": "Runs a local stdio server and controls Chrome."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "chrome-devtools-mcp@1.12.0"
+        ],
+        "env": []
+      }
+    },
+    "cautions": [
+      "Browser contents and logged-in sessions may be exposed to the agent; overlaps Playwright.",
+      "Google collects usage statistics by default; --no-usage-statistics opts out. The server also checks npm for updates by default."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "next-devtools",
+    "name": "Next.js DevTools MCP",
+    "kind": "mcp",
+    "category": "debugging",
+    "description": "Inspect a running Next.js development server.",
+    "why": "Specific diagnostics for Next.js projects.",
+    "source": "https://github.com/vercel/next-devtools-mcp",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "nextjs",
+      "debugging"
+    ],
+    "setup": [
+      {
+        "label": "Runtime",
+        "detail": "Node 20.19+ LTS and Next.js 16+ running dev server for runtime tools."
+      },
+      {
+        "label": "Setup",
+        "detail": "Start the project development server separately."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "next-devtools-mcp@0.4.0"
+        ],
+        "env": []
+      }
+    },
+    "cautions": [
+      "Do not enable for projects without the required Next.js version."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "languages": [
+      "typescript",
+      "javascript"
+    ]
+  },
+  {
+    "id": "shadcn-ui",
+    "name": "shadcn/ui MCP",
+    "kind": "mcp",
+    "category": "ui",
+    "description": "Search and inspect component registries.",
+    "why": "Use in a project that already uses shadcn/ui registries.",
+    "source": "https://ui.shadcn.com/docs/mcp",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "ui",
+      "components"
+    ],
+    "setup": [
+      {
+        "label": "Runtime",
+        "detail": "Node and npx. Registry settings come from the project components.json."
+      },
+      {
+        "label": "Auth",
+        "detail": "Public registry needs no key; private registries may need credentials."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "shadcn@4.23.0",
+          "mcp"
+        ],
+        "env": []
+      }
+    },
+    "cautions": [
+      "Installing components changes project files and dependencies. Check third-party registries before using them."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "languages": [
+      "typescript",
+      "javascript"
+    ]
+  },
+  {
+    "id": "cloudflare-api",
+    "name": "Cloudflare API MCP",
+    "kind": "mcp",
+    "category": "cloud",
+    "description": "Call Cloudflare APIs through hosted MCP.",
+    "why": "For Cloudflare account operations when an MCP connection is desired.",
+    "source": "https://github.com/cloudflare/mcp",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "cloudflare",
+      "oauth"
+    ],
+    "setup": [
+      {
+        "label": "Auth",
+        "detail": "Cloudflare account and client-supported OAuth, or a scoped API token configured manually."
+      },
+      {
+        "label": "Permissions",
+        "detail": "Select only required scopes; existing account permissions and product billing apply."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "http",
+        "url": "https://mcp.cloudflare.com/mcp"
+      }
+    },
+    "cautions": [
+      "Permitted calls can modify live infrastructure. OAuth is a separate user action."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "cloudflare-docs",
+    "name": "Cloudflare Docs MCP",
+    "kind": "mcp",
+    "category": "documentation",
+    "description": "Search Cloudflare documentation.",
+    "why": "Focused Cloudflare documentation lookup where general search is inadequate.",
+    "source": "https://github.com/cloudflare/mcp-server-cloudflare",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "cloudflare",
+      "docs"
+    ],
+    "setup": [
+      {
+        "label": "Transport",
+        "detail": "Connects to the hosted documentation server."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "http",
+        "url": "https://docs.mcp.cloudflare.com/mcp"
+      }
+    },
+    "cautions": [
+      "Overlaps Context7 and web search."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "cloudflare-cf",
+    "name": "Cloudflare CLI",
+    "kind": "cli",
+    "category": "cloud",
+    "description": "Manage Cloudflare API resources and Workers projects.",
+    "why": "Terminal-native Cloudflare operations and command discovery.",
+    "source": "https://developers.cloudflare.com/cf/",
+    "license": "MIT OR Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "cloudflare",
+      "beta"
+    ],
+    "setup": [
+      {
+        "label": "Runtime",
+        "detail": "Node 22.18+; cf is beta."
+      },
+      {
+        "label": "Auth",
+        "detail": "Run cf auth login to sign in. Use cf auth whoami to check the account."
+      }
+    ],
+    "install": {
+      "type": "command",
+      "command": "npm",
+      "args": [
+        "install",
+        "--global",
+        "cf@1.0.0-beta.24"
+      ],
+      "scope": "global"
+    },
+    "cautions": [
+      "Commands can change live resources. Product fees and access controls apply."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "wrangler",
+    "name": "Cloudflare Wrangler",
+    "kind": "cli",
+    "category": "cloud",
+    "description": "Develop and deploy Cloudflare Workers.",
+    "why": "Prefer the project-local CLI in existing Wrangler projects.",
+    "source": "https://developers.cloudflare.com/workers/wrangler/install-and-update/",
+    "license": "MIT OR Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "cloudflare",
+      "workers"
+    ],
+    "setup": [
+      {
+        "label": "Runtime",
+        "detail": "Supported Node; Windows 11, macOS 13.5+, or Linux glibc 2.35+."
+      },
+      {
+        "label": "Auth",
+        "detail": "npx wrangler login starts OAuth; select scopes and authenticate separately."
+      }
+    ],
+    "install": {
+      "type": "command",
+      "command": "npm",
+      "args": [
+        "install",
+        "--save-dev",
+        "wrangler@4.154.0"
+      ],
+      "scope": "project"
+    },
+    "cautions": [
+      "Adds a project dependency and lockfile changes. Do not deploy or migrate automatically."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "github-mcp",
+    "name": "GitHub MCP",
+    "kind": "mcp",
+    "category": "source-control",
+    "description": "Access GitHub repositories, issues and pull requests.",
+    "why": "Useful where a native GitHub connector or gh is unavailable.",
+    "source": "https://github.com/github/github-mcp-server",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "github",
+      "oauth"
+    ],
+    "setup": [
+      {
+        "label": "Auth",
+        "detail": "OAuth requires a compatible client; a scoped token is an alternative."
+      },
+      {
+        "label": "Scope",
+        "detail": "Choose only necessary repository access and toolsets; local server supports read-only mode."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "http",
+        "url": "https://api.githubcopilot.com/mcp/"
+      }
+    },
+    "cautions": [
+      "Some tools write to GitHub. Tool filtering does not replace credential restrictions."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "github-cli",
+    "name": "GitHub CLI",
+    "kind": "cli",
+    "category": "source-control",
+    "description": "Manage GitHub resources in a terminal.",
+    "why": "Often already installed and sufficient for PR, issue and Actions work.",
+    "source": "https://cli.github.com/manual/",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "github",
+      "cli"
+    ],
+    "setup": [
+      {
+        "label": "Install",
+        "detail": "Follow the official platform-specific installation instructions."
+      },
+      {
+        "label": "Auth",
+        "detail": "gh auth login starts interactive authentication; gh auth status checks it."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "Authentication can fall back to plaintext credential storage; permissions depend on the credential."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "ghidramcp-lauriewired",
+    "name": "GhidraMCP by LaurieWired",
+    "kind": "mcp",
+    "category": "reverse-engineering",
+    "description": "Bridge Ghidra analysis to MCP.",
+    "why": "Inspect and annotate loaded binaries from an agent.",
+    "source": "https://github.com/LaurieWired/GhidraMCP",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "ghidra",
+      "reverse-engineering",
+      "manual"
+    ],
+    "setup": [
+      {
+        "label": "Prerequisites",
+        "detail": "Ghidra 12.1.4, matching release extension, uv or Python 3.10+; restart Ghidra and enable the plugin."
+      },
+      {
+        "label": "Bridge",
+        "detail": "Run ghidra-mcp through uvx or installed Python; it connects to Ghidra at 127.0.0.1:8080 by default. Optional HTTP MCP bridge listens separately."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "Community project, not an NSA Ghidra product. Can rename analysis data; avoid exposing local bridge to untrusted networks."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "ghidramcp-bethington",
+    "name": "Ghidra MCP by bethington",
+    "kind": "mcp",
+    "category": "reverse-engineering",
+    "description": "Ghidra extension and Python MCP bridge.",
+    "why": "Alternative with broader analysis, scripting and debugging capabilities.",
+    "source": "https://github.com/bethington/ghidra-mcp",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "ghidra",
+      "reverse-engineering",
+      "manual"
+    ],
+    "setup": [
+      {
+        "label": "Prerequisites",
+        "detail": "Ghidra 12.1.4, Java 21, uv and a version-matched release extension and wheel."
+      },
+      {
+        "label": "Setup",
+        "detail": "Install extension in Ghidra, restart and enable plugin; install matching bridge wheel and configure its absolute path."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "Community project, not an NSA product. Offers write, script and debugging operations. Treat binaries and bridge access as untrusted."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "supabase-mcp",
+    "name": "Supabase MCP",
+    "kind": "mcp",
+    "category": "database",
+    "description": "Inspect and manage Supabase projects.",
+    "why": "Useful for Supabase development and database inspection.",
+    "source": "https://github.com/supabase/mcp",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "database",
+      "supabase",
+      "oauth"
+    ],
+    "setup": [
+      {
+        "label": "Auth",
+        "detail": "Requires Supabase account and interactive OAuth through a compatible client."
+      },
+      {
+        "label": "Scope",
+        "detail": "Use dashboard URL builder for project_ref and read_only=true when appropriate."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "http",
+        "url": "https://mcp.supabase.com/mcp?read_only=true"
+      }
+    },
+    "cautions": [
+      "Scope project before connecting. Read-only still exposes database contents; hosted usage and billing apply."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "neon-mcp",
+    "name": "Neon MCP",
+    "kind": "mcp",
+    "category": "database",
+    "description": "Inspect Neon Postgres and management API.",
+    "why": "Useful for Neon projects, branch and schema workflows.",
+    "source": "https://github.com/neondatabase/mcp-server-neon",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "database",
+      "postgres",
+      "oauth"
+    ],
+    "setup": [
+      {
+        "label": "Auth",
+        "detail": "Compatible client OAuth or API key; choose a project and limited role."
+      },
+      {
+        "label": "Scope",
+        "detail": "readonly=true is available; use projectId and roleName to constrain access."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "http",
+        "url": "https://mcp.neon.tech/mcp?readonly=true"
+      }
+    },
+    "cautions": [
+      "Read-only still exposes data. The old local stdio package and SSE endpoint are deprecated."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "sentry-mcp",
+    "name": "Sentry MCP",
+    "kind": "mcp",
+    "category": "observability",
+    "description": "Investigate Sentry issues and traces.",
+    "why": "Useful to diagnose applications already using Sentry.",
+    "source": "https://github.com/getsentry/toolkit",
+    "license": "See upstream LICENSE.md",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "sentry",
+      "debugging",
+      "oauth"
+    ],
+    "setup": [
+      {
+        "label": "Auth",
+        "detail": "Requires Sentry account and compatible client OAuth; review granted permissions."
+      },
+      {
+        "label": "Service",
+        "detail": "Use hosted MCP; local stdio also exists and can require additional configuration."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "http",
+        "url": "https://mcp.sentry.dev/mcp"
+      }
+    },
+    "cautions": [
+      "Issue and trace data can contain sensitive information; service plan limits apply."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "rea-mcp",
+    "name": "REA MCP",
+    "kind": "mcp",
+    "category": "reverse-engineering",
+    "description": "Inspect applications and binaries using a local reverse-engineering server.",
+    "why": "Analyze JavaScript and native targets from an agent with evidence and provider-specific tools.",
+    "source": "https://github.com/morluto/rea",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "reverse-engineering",
+      "node",
+      "engine-optional"
+    ],
+    "setup": [
+      {
+        "label": "Runtime required",
+        "detail": "Node 22.x >=22.23.4, 24.x >=24.22.1, or >=26.12.1, and npm."
+      },
+      {
+        "label": "Native engine required for deep native analysis",
+        "detail": "Configure an existing supported Hopper, Ghidra or IDA installation separately; static JavaScript inspection does not require a native engine. Platform support varies by provider."
+      },
+      {
+        "label": "Configured is not ready",
+        "detail": "Registering MCP does not install the matching workflow skill, verify connection or configure an analysis engine. Restart the client and verify tools and target-specific readiness."
+      }
+    ],
+    "install": {
+      "type": "mcp",
+      "server": {
+        "transport": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "rea-agents@6.8.0",
+          "mcp"
+        ],
+        "env": []
+      }
+    },
+    "cautions": [
+      "Upstream prefers a reviewed setup that registers an absolute runtime and entrypoint. An npx launcher can resolve packages or project configuration from the current working directory; use a trusted directory and review upstream installation guidance.",
+      "Runtime inspection can launch or interact with the target using user permissions; results reach the agent and model provider.",
+      "Supported operating systems and analysis providers vary; Linux process ownership checks require a procps-compatible ps."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "react-doctor",
+    "name": "React Doctor",
+    "kind": "cli",
+    "category": "debugging",
+    "description": "Scan React projects for diagnostics in correctness, performance and accessibility.",
+    "why": "Useful as an optional React-focused check alongside existing lint and tests.",
+    "source": "https://github.com/millionco/react-doctor",
+    "license": "Modified MIT; restrictions apply, see upstream LICENSE",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "react",
+      "diagnostics",
+      "manual"
+    ],
+    "setup": [
+      {
+        "label": "Runtime",
+        "detail": "Node ^20.19.0 or >=22.13.0 per npm metadata."
+      },
+      {
+        "label": "Manual scan",
+        "detail": "Run npx react-doctor@0.9.18 --no-telemetry from the project root. The separate install and ci commands change configuration and are not included."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "Crash and anonymous usage telemetry is enabled by default; --no-telemetry opts out. Dependency supply-chain checks may contact an external service.",
+      "The upstream license restricts certain AI training and paid hosted uses; review it before redistribution or deployment. Findings are heuristic and may overlap existing lint."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "languages": [
+      "typescript",
+      "javascript"
+    ]
+  }
+]

@@ -1,0 +1,146 @@
+[
+  {
+    "reviewedAt": "2026-10-28",
+    "languages": [
+      "rust"
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "id": "rust-unsafe-ffi",
+    "name": "Rust unsafe and FFI",
+    "kind": "skill",
+    "category": "languages",
+    "description": "Review unsafe Rust and foreign function boundaries.",
+    "why": "Names concrete pointer, ownership, layout and panic invariants to inspect.",
+    "source": "https://github.com/leynos/rust-skill",
+    "license": "MIT",
+    "tags": [
+      "rust",
+      "unsafe",
+      "ffi",
+      "soundness"
+    ],
+    "setup": [
+      {
+        "label": "Manual setup",
+        "detail": "Install the unsafe skill and its companion rust-verification skill from the same pinned revision; preserve their sibling directory layout."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "The interior-mutability reference links to the sibling rust-verification skill for Miri and loom guidance and asks for those checks before trusting new wrappers; the companion and tools require separate setup.",
+      "The guidance is a starting checklist, not a proof of soundness."
+    ]
+  },
+  {
+    "reviewedAt": "2026-10-28",
+    "languages": [
+      "rust"
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "id": "rust-analyzer",
+    "name": "rust-analyzer",
+    "kind": "cli",
+    "category": "languages",
+    "description": "Rust language server for navigation, diagnostics and refactoring.",
+    "why": "Compiler-aware code navigation helps with larger Rust projects.",
+    "source": "https://rust-analyzer.github.io/book/installation.html",
+    "license": "MIT OR Apache-2.0",
+    "tags": [
+      "rust",
+      "lsp",
+      "navigation"
+    ],
+    "setup": [
+      {
+        "label": "Manual setup",
+        "detail": "Install an editor LSP integration or use rustup component add rust-analyzer and rustup component add rust-src; editor configuration is separate."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "An LSP server is not an MCP server. Some editors already bundle it; standard-library source and toolchain versions must be compatible."
+    ]
+  },
+  {
+    "reviewedAt": "2026-10-28",
+    "languages": [
+      "rust"
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "id": "rust-miri",
+    "name": "Miri",
+    "kind": "cli",
+    "category": "languages",
+    "description": "Interpret Rust tests with additional undefined-behavior checks.",
+    "why": "Finds certain unsafe-code defects on executed paths.",
+    "source": "https://github.com/rust-lang/miri",
+    "license": "MIT OR Apache-2.0",
+    "tags": [
+      "rust",
+      "unsafe",
+      "testing",
+      "undefined-behavior"
+    ],
+    "setup": [
+      {
+        "label": "Manual setup",
+        "detail": "Install the nightly Miri component with rustup +nightly component add miri, then run cargo +nightly miri test in a trusted project."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "A passing run is not a soundness proof. Miri cannot execute all host operations or foreign functions and may require a matching nightly."
+    ]
+  },
+  {
+    "reviewedAt": "2026-10-28",
+    "languages": [
+      "rust"
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "id": "rust-cargo-audit",
+    "name": "cargo-audit",
+    "kind": "cli",
+    "category": "languages",
+    "description": "Compare Cargo.lock dependencies against RustSec advisories.",
+    "why": "Finds known vulnerable Rust dependencies in Cargo projects.",
+    "source": "https://github.com/rustsec/rustsec/tree/main/cargo-audit",
+    "license": "MIT OR Apache-2.0",
+    "tags": [
+      "rust",
+      "security",
+      "dependencies",
+      "cargo"
+    ],
+    "setup": [
+      {
+        "label": "Manual setup",
+        "detail": "Install with cargo install cargo-audit and run cargo audit in a trusted project; the advisory database is fetched separately."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "It checks known advisories, not all vulnerabilities or reachable code. If Cargo.lock is missing it can run cargo update and Cargo may execute project code; inspect untrusted lockfiles from outside the project as upstream documents."
+    ]
+  }
+]

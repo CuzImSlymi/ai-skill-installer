@@ -1,0 +1,26 @@
+[
+  {
+    "id": "hallmark",
+    "name": "Hallmark",
+    "kind": "skill",
+    "category": "ui",
+    "description": "Design websites with distinct layouts, themes, and browser checks.",
+    "why": "Combines design direction with checks for accessibility, layout, and repetitive AI design patterns.",
+    "source": "https://github.com/Nutlope/hallmark",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": ["design", "frontend", "themes", "together-ai", "accessibility"],
+    "setup": [
+      { "label": "Checks", "detail": "Node.js runs its bundled scripts. Browser checks may need Playwright and a browser." },
+      { "label": "Optional images", "detail": "Together AI image generation needs TOGETHER_API_KEY. It is optional for the skill itself." }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/Nutlope/hallmark.git",
+      "ref": "8f6969f8922caabde9de1784959eae11ddf68073",
+      "path": "skills/hallmark"
+    },
+    "cautions": ["Its design rules are opinionated. Keep existing project conventions and use its redesign mode deliberately."],
+    "clients": ["codex", "claude-code", "antigravity", "opencode"]
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "python-fastapi",
+    "name": "FastAPI official skill",
+    "kind": "skill",
+    "category": "languages",
+    "languages": [
+      "python"
+    ],
+    "description": "Build and review FastAPI endpoints and dependencies.",
+    "why": "The framework maintainer covers response validation, async versus blocking work, dependencies and streaming.",
+    "source": "https://github.com/fastapi/fastapi",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "python",
+      "fastapi",
+      "pydantic",
+      "api",
+      "async"
+    ],
+    "setup": [
+      {
+        "label": "Project scope",
+        "detail": "Use when the project uses FastAPI. Check the installed FastAPI and Pydantic versions against any suggested API."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/fastapi/fastapi.git",
+      "ref": "79cab5bed28b24d92c185d236feb33f5783dfeb3",
+      "path": "fastapi/.agents/skills/fastapi"
+    },
+    "cautions": [
+      "Some guidance targets recent FastAPI APIs; preserve the project’s versions and conventions.",
+      "The skill suggests related tools; installing or migrating a dependency is a separate choice."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "python-test-infrastructure",
+    "name": "Python testing infrastructure",
+    "kind": "skill",
+    "category": "languages",
+    "languages": [
+      "python"
+    ],
+    "description": "Review and build pytest and coverage infrastructure.",
+    "why": "Examines config precedence, coverage-gate failures and multi-version test strategy rather than generating individual tests.",
+    "source": "https://github.com/Paldom/python-skills",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "python",
+      "pytest",
+      "coverage",
+      "testing"
+    ],
+    "setup": [
+      {
+        "label": "Skill scripts",
+        "detail": "Includes a read-only script and reference files. The instructions use CLAUDE_SKILL_DIR; automatic installation is limited to Claude Code until other host support is verified."
+      },
+      {
+        "label": "Project tools",
+        "detail": "The workflow uses the project’s Python and pytest; optional coverage, uv, Hypothesis and mutation tools are separate dependencies."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/Paldom/python-skills.git",
+      "ref": "70aa0cf9926285dbef6ac39bc36990ece230cd09",
+      "path": "skills/python-testing"
+    },
+    "cautions": [
+      "This is for requested test infrastructure, not a single bug fix. Thresholds and added tooling must fit the project.",
+      "Upstream commands use Claude-specific CLAUDE_SKILL_DIR; script invocation on other clients requires adapting the path."
+    ],
+    "clients": [
+      "claude-code"
+    ]
+  },
+  {
+    "id": "python-package-artifacts",
+    "name": "Python packaging and artifacts",
+    "kind": "skill",
+    "category": "languages",
+    "languages": [
+      "python"
+    ],
+    "description": "Review Python packaging configuration and built distributions.",
+    "why": "Checks wheels and sdists, including missing typing markers and unintended files, and explains backend migration risks.",
+    "source": "https://github.com/Paldom/python-skills",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "python",
+      "packaging",
+      "wheel",
+      "sdist",
+      "pyproject"
+    ],
+    "setup": [
+      {
+        "label": "Skill scripts",
+        "detail": "Includes a read-only script and reference files. The instructions use CLAUDE_SKILL_DIR; automatic installation is limited to Claude Code until other host support is verified."
+      },
+      {
+        "label": "Project tools",
+        "detail": "Building requires the project’s Python build tooling; upstream examples use uv and optionally validate-pyproject."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/Paldom/python-skills.git",
+      "ref": "70aa0cf9926285dbef6ac39bc36990ece230cd09",
+      "path": "skills/python-packaging"
+    },
+    "cautions": [
+      "Upstream defaults to uv and recommends layout/config migrations. Preserve the existing stack and do not remove config or lockfiles without a scoped migration.",
+      "Building or fetching dependencies has side effects; the archive checker itself is separate and read-only."
+    ],
+    "clients": [
+      "claude-code"
+    ]
+  }
+]

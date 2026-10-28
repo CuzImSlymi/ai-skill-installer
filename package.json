@@ -1,0 +1,33 @@
+{
+  "name": "setup-ai-installer",
+  "version": "0.1.1",
+  "license": "GPL-3.0-only",
+  "description": "Install useful AI coding skills and tools without the hype",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CuzImSlymi/ai-skill-installer.git"
+  },
+  "type": "module",
+  "bin": {
+    "setup-ai-installer": "bin/ai-skill-installer.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "catalog",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22.20.0"
+  },
+  "scripts": {
+    "start": "node bin/ai-skill-installer.js",
+    "test": "node --test",
+    "check": "node bin/ai-skill-installer.js --check"
+  },
+  "dependencies": {
+    "@clack/prompts": "1.8.1",
+    "@iarna/toml": "2.2.5",
+    "jsonc-parser": "3.3.1"
+  }
+}

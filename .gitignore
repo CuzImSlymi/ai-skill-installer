@@ -1,0 +1,6 @@
+node_modules/
+*.tgz
+.env
+.env.*
+!.env.example
+.ai-skill-installer/

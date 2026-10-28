@@ -1,0 +1,1051 @@
+[
+  {
+    "id": "ponytail",
+    "name": "Ponytail",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Prefer the smallest complete, verified change.",
+    "why": "Checks existing code, platform features and validation before adding complexity.",
+    "source": "https://github.com/DietrichGebert/ponytail",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "code-quality"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/DietrichGebert/ponytail.git",
+      "ref": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
+      "path": "skills/ponytail"
+    },
+    "cautions": [
+      "Skill copy does not install hooks or guarantee always-on behavior."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "alsoIn": [
+      "context"
+    ]
+  },
+  {
+    "id": "unslop",
+    "name": "Unslop",
+    "kind": "skill",
+    "category": "writing",
+    "description": "Edit prose to remove repetitive AI writing patterns.",
+    "why": "Specific examples preserve meaning while improving voice.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "writing",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/unslop"
+    },
+    "cautions": [
+      "Strong style preferences should yield to user instructions."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "caveman",
+    "name": "Caveman",
+    "kind": "skill",
+    "category": "context",
+    "description": "Use terse replies while retaining technical detail.",
+    "why": "Clear opt-in response style with explicit exceptions for sensitive details.",
+    "source": "https://github.com/JuliusBrussee/caveman",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "context"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/JuliusBrussee/caveman.git",
+      "ref": "9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4",
+      "path": "skills/caveman"
+    },
+    "cautions": [
+      "Does not install the proxy, hook, MCP server, or additional mode skills. Session persistence depends on host. No savings guaranteed."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "pstack-tdd",
+    "name": "Pstack TDD",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Reproduce a localized bug with a focused failing test.",
+    "why": "Requires red before green but avoids brittle or expensive test scaffolding.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "code-quality",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/tdd"
+    },
+    "cautions": [
+      "Manual invocation metadata may be ignored by some hosts.",
+      "disable-model-invocation metadata is client-specific."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "root-causes",
+    "name": "Fix root causes",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Reproduce and trace failures before patching.",
+    "why": "Encourages evidence, instrumentation and checking sibling cases.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "code-quality",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/principle-fix-root-causes"
+    },
+    "cautions": [
+      "Its blanket advice about guards needs judgment; necessary validation still belongs at boundaries.",
+      "disable-model-invocation metadata is client-specific."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "prove-it",
+    "name": "Prove it works",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Check the actual artifact and feature path.",
+    "why": "Separates a build from evidence of the requested behavior.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "code-quality",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/principle-prove-it-works"
+    },
+    "cautions": [
+      "Full end-to-end checks may be unavailable or disproportionate.",
+      "disable-model-invocation metadata is client-specific."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "boundary-discipline",
+    "name": "Boundary discipline",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Validate external inputs at system boundaries.",
+    "why": "Focuses attention on parsing, error handling and the trust boundary.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "code-quality",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/principle-boundary-discipline"
+    },
+    "cautions": [
+      "Internal invariants may still require checks; do not trust unvalidated or mutable state blindly.",
+      "disable-model-invocation metadata is client-specific."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "idempotency",
+    "name": "Make operations idempotent",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Reason about retries and partial failure.",
+    "why": "Asks what a second run and a crash halfway leave behind.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "code-quality",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/principle-make-operations-idempotent"
+    },
+    "cautions": [
+      "PID-based stale-lock advice is not safe without addressing PID reuse and concurrency.",
+      "disable-model-invocation metadata is client-specific."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "api-migration",
+    "name": "Migrate callers then delete legacy APIs",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Simplify internal API migrations.",
+    "why": "Calls for an inventory and migration of callers in the same change.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "code-quality",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis"
+    },
+    "cautions": [
+      "Do not remove public or externally consumed compatibility without authorization.",
+      "disable-model-invocation metadata is client-specific."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "subtract-first",
+    "name": "Subtract before you add",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Remove unnecessary complexity before new code.",
+    "why": "Useful for refactors where dead paths obscure the real change.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "code-quality",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/principle-subtract-before-you-add"
+    },
+    "cautions": [
+      "Never delete useful validation or data just because it is outside a narrow description.",
+      "disable-model-invocation metadata is client-specific."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "verifiable-units",
+    "name": "Sequence verifiable units",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Break multi-step changes into checked units.",
+    "why": "Makes it easier to locate regressions and communicate evidence.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "code-quality",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/principle-sequence-verifiable-units"
+    },
+    "cautions": [
+      "A demand to rebase or create commits does not override user authorization.",
+      "disable-model-invocation metadata is client-specific."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "type-discipline",
+    "name": "Type system discipline",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Model states and validate at boundaries.",
+    "why": "Highlights discriminated states, exhaustive handling and schema-derived types.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "code-quality",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/principle-type-system-discipline"
+    },
+    "cautions": [
+      "Branding every primitive and banning all assertions can overcomplicate small code.",
+      "disable-model-invocation metadata is client-specific."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "context-discipline",
+    "name": "Guard context window",
+    "kind": "skill",
+    "category": "context",
+    "description": "Keep large outputs and unnecessary reads out of context.",
+    "why": "Useful reminder to select relevant data before reading bulk output.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "context",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/principle-guard-the-context-window"
+    },
+    "cautions": [
+      "Subagents consume their own context and may be unavailable or unauthorized.",
+      "disable-model-invocation metadata is client-specific."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "pstack-typescript",
+    "name": "Pstack TypeScript",
+    "kind": "skill",
+    "category": "languages",
+    "description": "Review TypeScript type safety and boundaries.",
+    "why": "Includes examples of narrowing, unions, exhaustiveness and derived types.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "typescript",
+      "type-safety",
+      "languages",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Companions",
+        "detail": "The TypeScript skill includes examples in its folder and uses the type-system and boundary-discipline skills."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/poteto/plugins.git",
+      "ref": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "path": "pstack/skills/typescript-best-practices"
+    },
+    "cautions": [
+      "Some rules are rigid; follow project conventions and scope."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "requires": [
+      "type-discipline",
+      "boundary-discipline"
+    ],
+    "languages": [
+      "typescript"
+    ]
+  },
+  {
+    "id": "swift-concurrency",
+    "name": "Swift Concurrency",
+    "kind": "skill",
+    "category": "languages",
+    "description": "Diagnose Swift actor isolation and migration issues.",
+    "why": "Checks compiler mode and the actual isolation boundary before a fix.",
+    "source": "https://github.com/AvdLee/Swift-Concurrency-Agent-Skill",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "swift",
+      "concurrency",
+      "actors",
+      "languages"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/AvdLee/Swift-Concurrency-Agent-Skill.git",
+      "ref": "d5770817d2622e1585b1f7eaebc791a9cb0959c8",
+      "path": "skills/swift-concurrency"
+    },
+    "cautions": [
+      "Examples depend on the Swift compiler and project settings."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "languages": [
+      "swift"
+    ]
+  },
+  {
+    "id": "swiftui-pro",
+    "name": "SwiftUI Pro",
+    "kind": "skill",
+    "category": "ui",
+    "description": "Review SwiftUI correctness, accessibility and performance.",
+    "why": "Routes to dedicated references for VoiceOver, Dynamic Type and deployment targets.",
+    "source": "https://github.com/twostraws/SwiftUI-Agent-Skill",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "swift",
+      "swiftui",
+      "accessibility",
+      "ui"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/twostraws/SwiftUI-Agent-Skill.git",
+      "ref": "f2920b63995263f57b3e198674e89a602efba6d2",
+      "path": "swiftui-pro"
+    },
+    "cautions": [
+      "Recent SDK guidance must be checked against the project toolchain and target."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "languages": [
+      "swift"
+    ]
+  },
+  {
+    "id": "cloudflare-agents",
+    "name": "Cloudflare Agents SDK",
+    "kind": "skill",
+    "category": "cloud",
+    "description": "Build and debug Cloudflare Agents SDK projects.",
+    "why": "Publisher-maintained guidance routes to current documentation and detailed references.",
+    "source": "https://github.com/cloudflare/skills",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "cloudflare",
+      "agents",
+      "workers",
+      "typescript"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the complete named skill directory. Restart the agent if necessary."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/cloudflare/skills.git",
+      "ref": "49a31e0b3229ccdffe4944be9c61bc7481d1d432",
+      "path": "skills/agents-sdk"
+    },
+    "cautions": [
+      "Using SDK features requires the relevant project packages and Cloudflare setup."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "languages": [
+      "typescript",
+      "javascript"
+    ]
+  },
+  {
+    "id": "rea",
+    "name": "Reverse Engineer Anything",
+    "kind": "skill",
+    "category": "reverse-engineering",
+    "description": "Inspect compiled apps and binaries with REA.",
+    "why": "Routes analyses by artifact and distinguishes static evidence from observed execution.",
+    "source": "https://github.com/morluto/rea",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "reverse-engineering",
+      "binary",
+      "rea",
+      "mcp"
+    ],
+    "setup": [
+      {
+        "label": "Server",
+        "detail": "The REA MCP server is configured separately. Restart the client and verify the connection and tool availability."
+      },
+      {
+        "label": "Native analysis",
+        "detail": "Deep native analysis requires a separately configured provider such as Hopper, Ghidra or IDA. Platform support varies."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/morluto/rea.git",
+      "ref": "64196b08cab9fab15649b6d0058f980cd3f733f6",
+      "path": ".agents/skills/reverse-engineer-anything"
+    },
+    "cautions": [
+      "REA is a separate MCP server and CLI; native analysis needs an appropriate engine.",
+      "Instructions and server versions can differ. Check the connected server's tool definitions."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "requires": [
+      "rea-mcp"
+    ]
+  },
+  {
+    "id": "tstack-file-pr",
+    "name": "Theo file-pr",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Create a concise PR after inspecting the branch.",
+    "why": "Checks for an existing PR and asks for a useful problem-first description.",
+    "source": "https://github.com/t3dotgg/tstack",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "workflow"
+    ],
+    "setup": [
+      {
+        "label": "GitHub CLI",
+        "detail": "Authenticate gh for the target repository before creating a PR. Comments use the included companion skill."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/t3dotgg/tstack.git",
+      "ref": "1085050f3baed1ac724caa4a8166145fb2ac88af",
+      "path": "skills/file-pr"
+    },
+    "cautions": [
+      "Can create pull requests on GitHub."
+    ],
+    "clients": [
+      "codex",
+      "claude-code"
+    ],
+    "requires": [
+      "tstack-leaving-pr-comments"
+    ]
+  },
+  {
+    "id": "pstack-how",
+    "name": "Pstack how",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Trace a subsystem and explain its runtime flow.",
+    "why": "Offers direct explanation and a separate critique workflow grounded in code.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "workflow",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Manual setup",
+        "detail": "Install pstack and its referenced prompts, companion skills, agent definitions and host adapter. A single directory copy does not supply its orchestration."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "Complex paths call model-specific subagents; cost and host support vary."
+    ],
+    "clients": [
+      "claude-code"
+    ]
+  },
+  {
+    "id": "pstack-why",
+    "name": "Pstack why",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Investigate design rationale using evidence.",
+    "why": "Separates documented intent from inference and reports gaps.",
+    "source": "https://github.com/poteto/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "workflow",
+      "pstack",
+      "poteto",
+      "lauren-tan"
+    ],
+    "setup": [
+      {
+        "label": "Manual setup",
+        "detail": "Install the complete pstack workflow and configure supported agent tools and accessible evidence sources. A single directory copy does not supply its orchestration."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "Uses multi-agent searches across connected systems; results and costs depend on access."
+    ],
+    "clients": [
+      "claude-code"
+    ]
+  },
+  {
+    "id": "pstack",
+    "name": "Pstack full workflow",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Lauren Tan’s complete engineering workflow with playbooks, principles, review and parallel investigation.",
+    "why": "Poteto mode routes bug fixes, performance investigation, features and long-running work through targeted skills and verification.",
+    "source": "https://github.com/cursor/plugins",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "pstack",
+      "poteto",
+      "engineering",
+      "review",
+      "verification",
+      "parallel",
+      "workflow"
+    ],
+    "setup": [
+      {
+        "label": "Official Claude Code setup",
+        "detail": "Follow the official Claude Code plugin steps in https://github.com/cursor/plugins/blob/main/pstack/README.md, then run /pstack:setup-pstack and /pstack:poteto-mode."
+      },
+      {
+        "label": "Official Cursor setup",
+        "detail": "Follow https://github.com/cursor/plugins/blob/main/pstack/docs/guide/01-setup.md. Cursor is outside this installer’s supported client choices."
+      },
+      {
+        "label": "Other clients",
+        "detail": "Other harnesses need a compatible version of the plugin."
+      },
+      {
+        "label": "Additional tools",
+        "detail": "Some routes reference Cursor built-ins or the separate cursor-team-kit plugin."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "The complete workflow uses multiple skills, agent definitions, model routing and host-specific tools. Parallel panels can increase usage.",
+      "Plugin installation and model setup are manual."
+    ],
+    "clients": [
+      "claude-code"
+    ]
+  },
+  {
+    "id": "tstack-leaving-pr-comments",
+    "name": "Theo leaving PR comments",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Prepare attributed, evidence-based GitHub comments.",
+    "why": "Names the agent author, checks for private details and verifies the resulting comment.",
+    "source": "https://github.com/t3dotgg/tstack",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "github",
+      "comments",
+      "review",
+      "workflow"
+    ],
+    "setup": [
+      {
+        "label": "GitHub CLI",
+        "detail": "Authenticate gh if posting to GitHub; posting requires user authorization."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/t3dotgg/tstack.git",
+      "ref": "1085050f3baed1ac724caa4a8166145fb2ac88af",
+      "path": "skills/leaving-pr-comments"
+    },
+    "cautions": [
+      "Can post comments on GitHub."
+    ],
+    "clients": [
+      "codex",
+      "claude-code"
+    ]
+  },
+  {
+    "id": "vercel-react-best-practices",
+    "name": "Vercel React best practices",
+    "kind": "skill",
+    "category": "ui",
+    "description": "Review React and Next.js performance patterns.",
+    "why": "Prioritizes waterfalls, bundle size, server work and rendering, with detailed rule references.",
+    "source": "https://github.com/vercel-labs/agent-skills",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "react",
+      "nextjs",
+      "performance",
+      "typescript"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the full skill directory and bundled references."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/vercel-labs/agent-skills.git",
+      "ref": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "path": "skills/react-best-practices",
+      "name": "vercel-react-best-practices"
+    },
+    "cautions": [
+      "The skill declares MIT in frontmatter; repository-wide licensing is not established. Check versions and measurements before applying recommendations."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ],
+    "languages": [
+      "typescript",
+      "javascript"
+    ]
+  },
+  {
+    "id": "anthropic-frontend-design",
+    "name": "Anthropic frontend design",
+    "kind": "skill",
+    "category": "ui",
+    "description": "Design and implement web interfaces with deliberate visual direction.",
+    "why": "Guides typography, color, composition and motion for a specific design brief.",
+    "source": "https://github.com/anthropics/skills",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "frontend",
+      "ui",
+      "design",
+      "web"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the full skill directory and bundled references."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/anthropics/skills.git",
+      "ref": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "path": "skills/frontend-design"
+    },
+    "cautions": [
+      "Use existing product conventions and accessibility requirements; a bold visual direction is not always appropriate."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "vercel-web-design-guidelines",
+    "name": "Vercel web design guidelines",
+    "kind": "skill",
+    "category": "ui",
+    "description": "Review UI against accessibility and interface guidelines.",
+    "why": "Checks semantics, keyboard access, focus and forms using Vercel’s current rules.",
+    "source": "https://github.com/vercel-labs/agent-skills",
+    "license": "Unknown; skill terms not declared",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "frontend",
+      "ui",
+      "accessibility",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Manual review",
+        "detail": "Inspect the skill at https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines and its licensing before using it."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "Skill instructions fetch changing remote rules and need a WebFetch-like capability. Rules include preferences as well as accessibility checks; review findings in context.",
+      "The guidelines repository has MIT terms but the skill itself has no clear license declaration; resolve redistribution terms."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "matt-codebase-design",
+    "name": "Matt Pocock codebase design",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Assess module interfaces and testing seams.",
+    "why": "Uses a deletion test, depth, locality and clear interfaces to assess where complexity belongs.",
+    "source": "https://github.com/mattpocock/skills",
+    "license": "MIT",
+    "reviewedAt": "2026-10-28",
+    "tags": [
+      "architecture",
+      "interfaces",
+      "testing",
+      "design"
+    ],
+    "setup": [
+      {
+        "label": "Skill folder",
+        "detail": "Copies the full skill directory and bundled references."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/mattpocock/skills.git",
+      "ref": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+      "path": "skills/engineering/codebase-design"
+    },
+    "cautions": [
+      "Follow existing project conventions. Exploring alternative designs can use parallel agents."
+    ],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  }
+]
