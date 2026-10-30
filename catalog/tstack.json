@@ -1,0 +1,274 @@
+[
+  {
+    "id": "tstack-sol-loop",
+    "name": "Theo Sol loop",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Review changes with GPT Sol in bounded rounds.",
+    "why": "A repeatable workflow from Theo’s tstack.",
+    "source": "https://github.com/t3dotgg/tstack",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "theo",
+      "tstack",
+      "workflow",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Needs a harness able to run a GPT Sol reviewer."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/t3dotgg/tstack.git",
+      "ref": "1085050f3baed1ac724caa4a8166145fb2ac88af",
+      "path": "skills/sol-loop"
+    },
+    "cautions": [
+      "Review can add time and model usage; agreement does not guarantee correctness."
+    ],
+    "clients": [
+      "codex",
+      "claude-code"
+    ]
+  },
+  {
+    "id": "tstack-council",
+    "name": "Theo Council",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Get independent reviews from three model providers.",
+    "why": "A repeatable workflow from Theo’s tstack.",
+    "source": "https://github.com/t3dotgg/tstack",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "theo",
+      "tstack",
+      "workflow",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Requires access to three model providers through your harness."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/t3dotgg/tstack.git",
+      "ref": "1085050f3baed1ac724caa4a8166145fb2ac88af",
+      "path": "skills/council"
+    },
+    "cautions": [
+      "Repeated review rounds can use substantial time and tokens."
+    ],
+    "clients": [
+      "codex",
+      "claude-code"
+    ]
+  },
+  {
+    "id": "tstack-babysit-pr",
+    "name": "Theo Babysit PR",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Watch pull request checks and address review findings.",
+    "why": "A repeatable workflow from Theo’s tstack.",
+    "source": "https://github.com/t3dotgg/tstack",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "theo",
+      "tstack",
+      "workflow",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Requires authenticated GitHub CLI and Python 3."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/t3dotgg/tstack.git",
+      "ref": "1085050f3baed1ac724caa4a8166145fb2ac88af",
+      "path": "skills/babysit-pr"
+    },
+    "cautions": [
+      "Can push fixes and post GitHub comments."
+    ],
+    "clients": [
+      "codex",
+      "claude-code"
+    ],
+    "requires": [
+      "tstack-leaving-pr-comments"
+    ]
+  },
+  {
+    "id": "tstack-modernize",
+    "name": "Theo Modernize PR",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Update older work against the current codebase.",
+    "why": "A repeatable workflow from Theo’s tstack.",
+    "source": "https://github.com/t3dotgg/tstack",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "theo",
+      "tstack",
+      "workflow",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Requires authenticated GitHub CLI for pull requests."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/t3dotgg/tstack.git",
+      "ref": "1085050f3baed1ac724caa4a8166145fb2ac88af",
+      "path": "skills/modernize"
+    },
+    "cautions": [
+      "Can rebase and update branches; check the repository workflow."
+    ],
+    "clients": [
+      "codex",
+      "claude-code"
+    ],
+    "requires": [
+      "tstack-leaving-pr-comments"
+    ]
+  },
+  {
+    "id": "tstack-takeover",
+    "name": "Theo Takeover",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Continue existing work while preserving contributor credit.",
+    "why": "A repeatable workflow from Theo’s tstack.",
+    "source": "https://github.com/t3dotgg/tstack",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "theo",
+      "tstack",
+      "workflow",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Requires authenticated GitHub CLI and Python 3 for PR workflows."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/t3dotgg/tstack.git",
+      "ref": "1085050f3baed1ac724caa4a8166145fb2ac88af",
+      "path": "skills/takeover"
+    },
+    "cautions": [
+      "Can modify branches and create pull requests."
+    ],
+    "clients": [
+      "codex",
+      "claude-code"
+    ],
+    "requires": [
+      "tstack-modernize",
+      "tstack-file-pr",
+      "tstack-babysit-pr",
+      "tstack-leaving-pr-comments"
+    ]
+  },
+  {
+    "id": "tstack-full-send",
+    "name": "Theo Full send",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Finish, review, open and merge a pull request.",
+    "why": "A repeatable workflow from Theo’s tstack.",
+    "source": "https://github.com/t3dotgg/tstack",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "theo",
+      "tstack",
+      "workflow",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Requires GitHub CLI, Python 3, and access to a GPT Sol reviewer."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/t3dotgg/tstack.git",
+      "ref": "1085050f3baed1ac724caa4a8166145fb2ac88af",
+      "path": "skills/full-send"
+    },
+    "cautions": [
+      "Explicitly authorizes merging and force-pushing the PR branch after rebase."
+    ],
+    "clients": [
+      "codex",
+      "claude-code"
+    ],
+    "requires": [
+      "tstack-sol-loop",
+      "tstack-file-pr",
+      "tstack-babysit-pr"
+    ]
+  },
+  {
+    "id": "tstack-full-stop",
+    "name": "Theo Full stop",
+    "kind": "skill",
+    "category": "workflow",
+    "description": "Finish and review a pull request, then leave it for you to merge.",
+    "why": "A repeatable workflow from Theo’s tstack.",
+    "source": "https://github.com/t3dotgg/tstack",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "theo",
+      "tstack",
+      "workflow",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Requires GitHub CLI, Python 3, and access to a GPT Sol reviewer."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/t3dotgg/tstack.git",
+      "ref": "1085050f3baed1ac724caa4a8166145fb2ac88af",
+      "path": "skills/full-stop"
+    },
+    "cautions": [
+      "May commit, push and force-push the task branch. Its trigger also matches full stop used as emphasis."
+    ],
+    "clients": [
+      "codex",
+      "claude-code"
+    ],
+    "requires": [
+      "tstack-full-send"
+    ]
+  }
+]
