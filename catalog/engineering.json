@@ -1,0 +1,238 @@
+[
+  {
+    "id": "cloudflare-security-audit",
+    "name": "Cloudflare Security Audit",
+    "kind": "skill",
+    "category": "security",
+    "description": "Investigate security vulnerabilities with evidence and independent verification.",
+    "why": "Investigate security vulnerabilities with evidence and independent verification.",
+    "source": "https://github.com/cloudflare/security-audit-skill",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "security",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Full audits need Node, parallel agents, and a tightly isolated sandbox; they write audit artifacts. If sandbox controls are unavailable, findings need validation."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/cloudflare/security-audit-skill.git",
+      "ref": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+      "path": "skills/security-audit"
+    },
+    "cautions": [],
+    "clients": [
+      "codex",
+      "claude-code"
+    ]
+  },
+  {
+    "id": "trailofbits-property-testing",
+    "name": "Trail of Bits Property-Based Testing",
+    "kind": "skill",
+    "category": "code-quality",
+    "description": "Find counterexamples by testing properties across generated inputs.",
+    "why": "Find counterexamples by testing properties across generated inputs.",
+    "source": "https://github.com/trailofbits/skills",
+    "license": "CC-BY-SA-4.0",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "code-quality",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "May require a property-testing library such as fast-check, Hypothesis, or proptest; the installer does not add one."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/trailofbits/skills.git",
+      "ref": "2be6433b39e009cd2b6fd3be1895f6b1faa5af9a",
+      "path": "plugins/property-based-testing/skills/property-based-testing"
+    },
+    "cautions": [],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "emil-animation-performance",
+    "name": "Emil Animation Performance",
+    "kind": "skill",
+    "category": "ui",
+    "description": "Diagnose dropped frames and animation rendering costs.",
+    "why": "Diagnose dropped frames and animation rendering costs.",
+    "source": "https://github.com/emilkowalski/skills",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "ui",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Profile actual devices and browsers before applying generalized performance advice."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/emilkowalski/skills.git",
+      "ref": "a81dbca07f2217b7103e510c0f13f8d5b017afc9",
+      "path": "skills/animation-performance"
+    },
+    "cautions": [],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "emil-mobile-native",
+    "name": "Emil Mobile Native",
+    "kind": "skill",
+    "category": "ui",
+    "description": "Improve touch, viewport, safe-area, and mobile web behavior.",
+    "why": "Improve touch, viewport, safe-area, and mobile web behavior.",
+    "source": "https://github.com/emilkowalski/skills",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "ui",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Some checks require a physical phone; apply interaction defaults to the product context."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/emilkowalski/skills.git",
+      "ref": "a81dbca07f2217b7103e510c0f13f8d5b017afc9",
+      "path": "skills/mobile-native"
+    },
+    "cautions": [],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "emil-break-ui",
+    "name": "Emil Break UI",
+    "kind": "skill",
+    "category": "ui",
+    "description": "Stress-test interfaces with realistic long, empty, and unusual data.",
+    "why": "Stress-test interfaces with realistic long, empty, and unusual data.",
+    "source": "https://github.com/emilkowalski/skills",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "ui",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "Creates a development-only data toggle and reports problems before asking about fixes."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/emilkowalski/skills.git",
+      "ref": "a81dbca07f2217b7103e510c0f13f8d5b017afc9",
+      "path": "skills/break-ui"
+    },
+    "cautions": [],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "matt-diagnosing-bugs",
+    "name": "Matt Diagnosing Bugs",
+    "kind": "skill",
+    "category": "debugging",
+    "description": "Build a repeatable failure and test hypotheses for difficult bugs.",
+    "why": "Build a repeatable failure and test hypotheses for difficult bugs.",
+    "source": "https://github.com/mattpocock/skills",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "debugging",
+      "review"
+    ],
+    "setup": [
+      {
+        "label": "Setup",
+        "detail": "May ask for help when it cannot reproduce a failure; includes an optional Bash script."
+      }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/mattpocock/skills.git",
+      "ref": "a496f5513d4a4cf889bc48e189e579f4b0bdf6aa",
+      "path": "skills/engineering/diagnosing-bugs"
+    },
+    "cautions": [],
+    "clients": [
+      "codex",
+      "claude-code",
+      "antigravity",
+      "opencode"
+    ]
+  },
+  {
+    "id": "trailofbits-differential-review",
+    "name": "Trail of Bits Differential Review",
+    "kind": "skill",
+    "category": "security",
+    "description": "Review a code change for security regressions and downstream impact.",
+    "why": "Combines change-focused analysis with security context and evidence.",
+    "source": "https://github.com/trailofbits/skills/tree/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a/plugins/differential-review",
+    "license": "CC-BY-SA-4.0",
+    "reviewedAt": "2026-10-30",
+    "tags": [
+      "security",
+      "review",
+      "git"
+    ],
+    "setup": [
+      {
+        "label": "Manual setup",
+        "detail": "Install the differential-review plugin using the upstream instructions. Its high-risk workflow references a plugin-specific adversarial-modeler agent outside the skill folder."
+      },
+      {
+        "label": "Report",
+        "detail": "The workflow writes a Markdown report and may use Git commands and subagents."
+      }
+    ],
+    "install": null,
+    "cautions": [
+      "The full plugin and its agent require a supported harness; check upstream setup."
+    ],
+    "clients": [
+      "claude-code",
+      "codex"
+    ]
+  }
+]
