@@ -1,0 +1,26 @@
+[
+  {
+    "id": "supabase-postgres-best-practices",
+    "name": "Supabase Postgres Best Practices",
+    "kind": "skill",
+    "category": "database",
+    "languages": ["sql"],
+    "description": "Review PostgreSQL queries, indexes, schemas, connection pooling, and row-level security.",
+    "why": "Provides concrete SQL examples and specialist references for PostgreSQL running anywhere, including locking and migrations.",
+    "source": "https://github.com/supabase/agent-skills/tree/c9be0e931b7930f7d02126d04774d904c381e7d7/skills/supabase-postgres-best-practices",
+    "license": "MIT",
+    "reviewedAt": "2026-10-30",
+    "tags": ["supabase", "postgres", "postgresql", "sql", "indexes", "rls", "performance"],
+    "setup": [
+      { "label": "Project", "detail": "Use with PostgreSQL; a Supabase account is not required. Installs the complete reference directory." }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/supabase/agent-skills.git",
+      "ref": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+      "path": "skills/supabase-postgres-best-practices"
+    },
+    "cautions": ["The upstream skill triggers broadly for database changes. Validate advice against your PostgreSQL version, schema, query plans, and workload before changing indexes or policies."],
+    "clients": ["codex", "claude-code", "antigravity", "opencode"]
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "sentry-secret-serialization",
+    "name": "Sentry Secret Serialization",
+    "kind": "skill",
+    "category": "security",
+    "description": "Trace credentials leaking through serialized objects, logs, and error reports.",
+    "why": "Checks both credential holders and whole-object sinks across existing code, beyond the current diff.",
+    "source": "https://github.com/getsentry/skills/tree/d12f250460ffd961f549dbebf7eeb0cf4afd4c2e/skills/secret-serialization",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-30",
+    "tags": ["sentry", "secrets", "logging", "serialization", "security"],
+    "languages": ["python", "javascript", "typescript"],
+    "setup": [
+      { "label": "Review", "detail": "Reads source files and bundled Python and JavaScript references. No API key or scanner runtime required." }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/getsentry/skills.git",
+      "ref": "d12f250460ffd961f549dbebf7eeb0cf4afd4c2e",
+      "path": "skills/secret-serialization"
+    },
+    "cautions": ["Potential credential holders and sinks are review leads until a reachable leak is established. This does not scan committed secrets or replace a general security review."],
+    "clients": ["codex", "claude-code", "antigravity", "opencode"]
+  },
+  {
+    "id": "sentry-skill-scanner",
+    "name": "Sentry Skill Scanner",
+    "kind": "skill",
+    "category": "security",
+    "description": "Inspect agent skills for suspicious instructions, scripts, permissions, and secret exposure.",
+    "why": "Combines a bundled pattern scanner with source review before adopting unfamiliar skills.",
+    "source": "https://github.com/getsentry/skills/tree/d12f250460ffd961f549dbebf7eeb0cf4afd4c2e/skills/skill-scanner",
+    "license": "Apache-2.0",
+    "reviewedAt": "2026-10-30",
+    "tags": ["sentry", "skills", "prompt-injection", "scripts", "security"],
+    "setup": [
+      { "label": "Runtime", "detail": "The bundled scanner needs uv, Python 3.9+, and PyYAML. uv may download Python or dependencies on first use; the installer does not install these runtimes." },
+      { "label": "Scanner", "detail": "Run uv run with the absolute path to scripts/scan_skill.py inside the installed skill, followed by the target skill directory. Manual reference-based review is available if the script fails." }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/getsentry/skills.git",
+      "ref": "d12f250460ffd961f549dbebf7eeb0cf4afd4c2e",
+      "path": "skills/skill-scanner"
+    },
+    "cautions": ["A clean pattern scan does not establish trust. Review script behavior and dependencies; recognized domains can still host malicious content."],
+    "clients": ["codex", "claude-code", "antigravity", "opencode"]
+  },
+  {
+    "id": "trailofbits-sharp-edges",
+    "name": "Trail of Bits Sharp Edges",
+    "kind": "skill",
+    "category": "security",
+    "description": "Review APIs and configuration for dangerous defaults and easy security mistakes.",
+    "why": "Examines misuse resistance and security-sensitive design choices rather than repeating general code review.",
+    "source": "https://github.com/trailofbits/skills/tree/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a/plugins/sharp-edges",
+    "license": "CC-BY-SA-4.0",
+    "reviewedAt": "2026-10-30",
+    "tags": ["trail-of-bits", "api", "configuration", "secure-defaults", "security"],
+    "setup": [
+      { "label": "Review", "detail": "Installs the core skill and language references. The optional sharp-edges-analyzer agent belongs to the upstream plugin and is not installed by this skill recipe." }
+    ],
+    "install": {
+      "type": "skill",
+      "repo": "https://github.com/trailofbits/skills.git",
+      "ref": "2be6433b39e009cd2b6fd3be1895f6b1faa5af9a",
+      "path": "plugins/sharp-edges/skills/sharp-edges"
+    },
+    "cautions": ["Design recommendations are not permission to make breaking API changes. The upstream skill retains its Creative Commons license and attribution."],
+    "clients": ["codex", "claude-code", "antigravity", "opencode"]
+  }
+]
